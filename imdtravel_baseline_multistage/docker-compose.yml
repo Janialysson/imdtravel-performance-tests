@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+  imdtravel:
+    build: ./imdtravel
+    ports:
+      - "8080:8080"
+    depends_on:
+      - airlineshub
+      - exchange
+      - fidelity
+
+  airlineshub:
+    build: ./airlineshub
+    ports:
+      - "8081:8081"
+
+  exchange:
+    build: ./exchange
+    ports:
+      - "8082:8082"
+
+  fidelity:
+    build: ./fidelity
+    ports:
+      - "8083:8083"
